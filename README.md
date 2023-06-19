@@ -13,8 +13,8 @@ This is a solution to the [Single price grid component challenge on Frontend Men
 
 ## Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- [Solution URL](https://your-solution-url.com)
+- [Live Site URL](https://single-price-grid-component-azure-xi.vercel.app/)
 
 ## My process
 
@@ -34,4 +34,4 @@ This is a solution to the [Single price grid component challenge on Frontend Men
 
 ### Author
 
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
+- Frontend Mentor - [@Salah Shadou]()
