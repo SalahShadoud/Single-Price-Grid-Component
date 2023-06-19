@@ -1,0 +1,286 @@
+:root {
+    --cyan: hsl(179, 62%, 43%);
+    --cyan-hsl: 179, 62%, 43%;
+
+    --bright-yellow: hsl(71, 73%, 54%);
+
+    --light-gray: hsl(204, 43%, 93%);
+    --light-gray-hsl: 204, 43%, 93%;
+    --grayish-blue: hsl(218, 22%, 67%);
+
+    --ff-karla: 'Karla', sans-serif;
+
+    --fs-regular: 16px;
+
+    --fw-regular: 400;
+    --fw-bold: 700;
+}
+
+/* CSS Resets */
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/*
+    2. Remove default margin
+  */
+* {
+    margin: 0;
+}
+
+/*
+    3. Allow percentage-based heights in the application
+  */
+html,
+body {
+    height: 100%;
+}
+
+/*
+    Typographic tweaks!
+    4. Add accessible line-height
+    5. Improve text rendering
+  */
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+/*
+    6. Improve media defaults
+  */
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+/*
+    7. Remove built-in form typography styles
+  */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/*
+    8. Avoid text overflows
+  */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+
+/* ---------- General ---------- */
+
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+
+    font-size: var(--fs-regular);
+    font-family: var(--ff-karla);
+    font-weight: var(--fw-regular);
+    background: var(--light-gray);
+    color: white;
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    background: var(--cyan);
+    color: var(--light-gray);
+    width: 100%;
+    padding-block: 5px;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.attribution a {
+    color: var(--bright-yellow);
+}
+
+
+/* ---------- Utilities ---------- */
+
+.flex-group {
+    display: flex;
+    flex-direction: column;
+}
+
+/* ---------- Container ---------- */
+
+.container {
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    grid-template-columns: repeat(2, 330px);
+    box-shadow: 0 1rem 3rem var(--grayish-blue);
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.item-1 {
+    grid-row: 1 / 2;
+    grid-column: 1 / 3;
+    background: white;
+}
+
+.item-2 {
+    grid-row: 2 / 2;
+    grid-column: 1 / 2;
+    background: var(--cyan);
+}
+
+.item-3 {
+    grid-row: 2 / 2;
+    grid-column: 2 / 3;
+    background: hsla(var(--cyan-hsl), 0.8);
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 1rem;
+    padding-inline: 2.5rem;
+    padding-block: 2.5rem;
+}
+
+.card:nth-child(2) {
+    justify-content: space-between;
+}
+
+.sub-box {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.header {
+    font-size: 1.3rem;
+    color: var(--cyan);
+    font-weight: var(--fw-bold);
+}
+
+.item-1 .sub-header {
+    font-size: 1.1rem;
+    color: var(--bright-yellow);
+    font-weight: var(--fw-bold);
+}
+
+.item-2 .sub-header,
+.item-3 .sub-header {
+    font-size: 1.2rem;
+    color: white;
+}
+
+.item-1 .paragraph {
+    color: var(--grayish-blue);
+    max-width: 550px;
+    font-size: 1rem;
+}
+
+.pricing {
+    color: hsla(var(--light-gray-hsl), 0.6);
+}
+
+.pricing .num {
+    font-size: 2rem;
+    font-weight: var(--fw-bold);
+    color: var(--light-gray);
+}
+
+.pricing__details {
+    color: var(--light-gray);
+}
+
+.button {
+    border: none;
+    border-radius: 0.3rem;
+    padding-block: .8rem;
+    background: var(--bright-yellow);
+    color: white;
+}
+
+.button:hover {
+    opacity: 0.7;
+}
+
+.button:focus {
+    border: none;
+    outline: none;
+}
+
+.item-3 .paragraph {
+    color: hsla(var(--light-gray-hsl), .8);
+}
+
+
+/* ---------- Media Queries ----------  */
+
+@media screen and (max-width: 700px) {
+    
+    body {
+        min-height: 130vh;
+        padding-inline: 0.8rem;
+    }
+
+    .container {
+        grid-template-rows: repeat(3, auto);
+        grid-template-columns: repeat(1, 350px);
+    }
+
+    .item-1 {
+        grid-row: 1 / 2;
+        grid-column: 1;
+    }
+    
+    .item-2 {
+        grid-row: 2 / 3;
+        grid-column: 1;
+    }
+    
+    .item-3 {
+        grid-row: 3 / 4;
+        grid-column: 1;
+    }
+
+    .card {
+        padding: 1.7rem;
+    }
+
+    .header {
+        font-size: 1.2rem;
+    }
+
+    .item-1 .sub-header {
+        font-size: 1rem;
+    }
+
+    .item-1 .paragraph {
+        font-size: 0.9rem;
+    }
+}
